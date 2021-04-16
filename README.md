@@ -12,7 +12,6 @@ Example	user commands:
 ```		./a.out	myprog.c
 		cc	–o	myprog	myprog.c
 		ls	-l
-
 ```
 b) Run	an	external	command	by	redirecting	standard	input	from	a	file:	
 The	symbol	“<”	is	used	for	input	redirection,	where	the	input	will	be	read	from	
@@ -35,7 +34,8 @@ Example	user commands:
 d) Combination	of	input	and	output	redirection: Here	we	use	both	“<”	
 and	“>”	to	specify	both	types	of	redirection.	<br><br>
 Example	user command
-```		./a.out	<	infile.txt	>	outfile.txt
+```		
+		./a.out	<	infile.txt	>	outfile.txt
 ```
 
 e) Run	an	external	command	in	the	background	with	possible	input	
@@ -54,6 +54,7 @@ commands	will	be	redirected	to	the	standard	input	of	the	next	command,	in
 sequence.	You	need	to	use	the	“pipe()”	system	call	to	implement	this	feature.
 <br><br>
 Example	user commands:
-```	ls	|	more
+```	
+	ls	|	more
 	cat	abc.c	|	sort	|	more
-``
+```

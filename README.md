@@ -1,25 +1,29 @@
 # Rudimentary-command-line-interpreter
 Implementation of a rudimentary command-line interpreter running on the Linux operating system
 
-A	shell	that runs	as	an	application	program	on	top	of	the	Linux	kernel.	The	shell	accepts	user	commands	(one	line	at	a	time),	and	execute	the	same.	The	
+A shell	that runs	as	an	application	program	on	top	of	the	Linux	kernel.	The	shell	accepts	user	commands	(one	line	at	a	time),	and	execute	the	same.	The	
 following	features	are	implemented:
 
 a) Run	an	external	command: The	external	commands	refer	to	
 executables	that	are	stored	as	files.	They	have	to	be	executed	by	spawning	a	child	
-process	and	invoking	execlp() or	some	similar	system	calls.	
+process	and	invoking	execlp() or	some	similar	system	calls.	<br>
 Example	user commands:
-		./a.out	myprog.c
+
+```		./a.out	myprog.c
 		cc	–o	myprog	myprog.c
 		ls	-l
 
+```
 b) Run	an	external	command	by	redirecting	standard	input	from	a	file:	
 The	symbol	“<”	is	used	for	input	redirection,	where	the	input	will	be	read	from	
 the	specified	file	and	not	from	the	keyboard.	You	need	to	use	a	system	call	like	
 “dup()”	or	“dup2()”	to	carry	out	the	redirection.	
+```
 Example	user	command:
 		./a.out	<	infile.txt
 		sort	<	somefile.txt
 
+```
 c) Run	an	external	command	by	redirecting	standard	output	to	a	file:	
 The	symbol	“>”	is	used	for	output	redirection,	where	the	output	will	be	written	
 to	the	specified	file	and	not	to	the	screen.	You	need	to	use	a	system	call	like	
